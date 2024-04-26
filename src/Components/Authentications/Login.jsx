@@ -1,45 +1,40 @@
 import React, { useState } from "react";
 import "./Log-Sign.css";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Firebase";
-import "animate.css";
+import { FcGoogle } from "react-icons/fc";
+import { IoLogoGithub } from "react-icons/io5";
+import firebase from "../Firebase";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
-
-const Login = () => {
-  const [values, setValues] = useState({
-    email: "",
-    pass: "",
-  });
-  const [errorMsg, setErrorMsg] = useState("");
-  const [buttonDisabled, setButtonDisabled] = useState(false);
+const Login = (props) => {
   const navigate = useNavigate();
-  //   const [isActive, setIsActive] = useState(false);
 
-  const handleSubmission = () => {
-    if (!values.email || !values.pass) {
-      setErrorMsg("Fill all fields");
-    } else {
-      setErrorMsg("");
-      setButtonDisabled(true);
-      signInWithEmailAndPassword(auth, values.email, values.pass)
-        .then((response) => {
-          setButtonDisabled(false);
-          navigate("/home");
-          console.log(response);
-        })
-        .catch((err) => {
-          setButtonDisabled(false);
-          setErrorMsg(err.message.slice(22, -2));
-          console.log("Error", err.message);
-        });
-      console.log(values);
-    }
+  const handleGoogleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        props.updateUserState(true);
+        console.log("Sign IN successfully..");
+        navigate("/");
+        const token = credential.accessToken;
+        const user = result.user;
+      })
+      .catch((error) => {
+        console.log(error);
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
   };
+
+  const handleGitHubSignIn = () => {};
 
   return (
     <>
-      <div className="mainBody">
+      {/* <div className="mainBody">
         <div className="log-sign-box animate__animated animate__fadeInUp">
           <h1>
             Welcome Back !<h2>Please enter your account details to logIn</h2>
@@ -76,6 +71,31 @@ const Login = () => {
             <span className="signin-link">
               <Link to="/signup">Sign Up </Link>
             </span>
+          </div>
+        </div>
+      </div> */}
+
+      <div id="login" className="login-page">
+        <div className="login-card">
+          <figure className="logo-img">
+            <img src="/icons8-book-96.png" alt="" />
+          </figure>
+          <h1>
+            welcome back !<h6>pls enter your details to login</h6>
+          </h1>
+          <div className="login-btn space-y-2">
+            <button onClick={handleGoogleSignIn} className="google same-btn">
+              Google <FcGoogle className="ml-2" />
+            </button>
+            <button
+              onClick={handleGitHubSignIn}
+              className="github same-btn cursor-not-allowed"
+            >
+              Github <IoLogoGithub className="ml-2" />
+            </button>
+            <h4 className="signup-navigate">
+              Create an account : <a href="">Sign UP</a>
+            </h4>
           </div>
         </div>
       </div>

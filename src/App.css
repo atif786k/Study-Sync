@@ -1,13 +1,13 @@
-@font-face {
-    font-family: 'AzedoBold';
-    src: local('AzedoBold'),
-    url('./fonts/Azedo-Bold.otf') format('otf');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+body,
+.roboto-font {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.sideBar-dashBoard{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-ul li:hover{
-    color: gray;
+::-webkit-scrollbar {
+  width: 0;
 }

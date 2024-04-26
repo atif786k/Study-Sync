@@ -1,0 +1,20 @@
+.testimonies-page {
+  width: 100vw;
+  padding: 40px 28px 60px 27px;
+  background-color: #ffffff;
+  color: #111111;
+}
+.page-heading {
+  margin-bottom: 36px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 44px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .testimonies-page {
+    padding: 40px 100px 60px 100px;
+  }
+}

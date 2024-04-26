@@ -1,0 +1,42 @@
+
+.side-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #111111; /* Change the background color as needed */
+    transition: transform 0.3s ease;
+    transform: translateX(-250px);
+  }
+  
+  .side-navbar.open {
+    transform: translateX(0);
+  }
+  
+  .toggle-button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 999; /* Make sure the button is above other elements */
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .nav-links li {
+    padding: 10px;
+    color: #ffffff; /* Change the text color as needed */
+    cursor: pointer;
+  }
+  
+  /* Add more CSS for styling as needed */
+  

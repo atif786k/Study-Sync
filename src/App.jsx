@@ -14,10 +14,33 @@ import Login from "./Components/Authentications/Login";
 import Signup from "./Components/Authentications/Signup";
 import Third_Intro from "./Components/DashBoard/Year/Third/Third_Intro";
 
+import Home from "./utils/Home";
+import { useState } from "react";
+import { getAuth, signOut } from "firebase/auth";
+
+// import Contact from "./utils/Contact";
+// import Testimonials from "./utils/Testimonials";
+// import Insight from "./utils/Insight";
+
 function App() {
+  const [user, setUser] = useState(false);
+  const updateUserState = (isLoggedIn) => {
+    setUser(isLoggedIn);
+  };
+  const auth = getAuth();
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("SignOut successfully...");
+        setUser(false);
+      })
+      .catch((error) => {
+        console.log("error");
+      });
+  };
   return (
     <>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={<OpeningPage />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
@@ -43,6 +66,14 @@ function App() {
               </Route>
             </Route>
           </Route>
+        </Routes>`qq
+      </Router> */}
+
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home userState={user} userLogOut={handleLogOut}/>}></Route>
+          <Route exact path="/signin" element={<Login updateUserState={updateUserState}/>}></Route>
+          <Route exact path="/signup" element={<Signup />}></Route>
         </Routes>
       </Router>
     </>

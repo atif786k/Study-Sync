@@ -1,0 +1,94 @@
+.nav-component {
+  width: 100%;
+  padding: 24px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+}
+.nav-items {
+  display: none;
+  align-items: center;
+}
+.nav-items li {
+  padding: 0px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.contact {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.contact svg {
+  margin-left: 6px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: green;
+  cursor: pointer;
+}
+.contact:hover svg{
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-in;
+}
+.side-nav{
+  margin-left: 6px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav-auth-btn{
+  color: green;
+  font-size: 18px;
+  font-weight: 500;
+}
+.nav-auth-btn:hover{
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .nav-items{
+    display: flex;
+  }
+  .contact svg {
+    width: 36px;
+    height: 36px;
+  }
+  .side-nav{
+    display: none;
+    width: 36px;
+    height: 36px;
+  }
+}
+/* @media (min-width: 1024px) {
+} */
+
+/* Line Animation :- */
+.lineAnimation::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: green;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.lineAnimation:hover::after {
+  transform: scaleX(1);
+}
