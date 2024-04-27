@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Log-Sign.css";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io5";
-import firebase from "../Firebase";
+import firebase from "../Components/Firebase";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
 const Login = (props) => {

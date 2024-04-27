@@ -1,30 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import "./css/dhome.css";
+import { Outlet, Link } from "react-router-dom";
+import SideBar from "../Components/SideBar";
 
 const Dhome = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
+  const [collapsed, setCollapsed] = React.useState(true);
+  const toggle = () => {
+    setCollapsed(!collapsed);
   };
   return (
     <>
-    <h1>working</h1>
-      <div className={`side-navbar ${isOpen ? 'open' : ''}`}>
-      <button className="toggle-button" onClick={toggleNavbar}>
-        {/* Add your toggle button or icon here */}
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </button>
-      {/* Add your navigation links or components here */}
-      <ul className="nav-links">
-        <li>Link 1</li>
-        <li>Link 2</li>
-        <li>Link 3</li>
-        {/* Add more links as needed */}
-      </ul>
-    </div>
+      <section id="dash" className="dash-page">
+        <SideBar />
+        <div className="dash-main-div">
+          <div className="search-main-div">
+            <h1>Which topic you want to study today ?</h1>
+            <div className="search-field-div">
+              <input
+                type="text"
+                placeholder="Search topic"
+                className="topic-search"
+              />
+              <button className="search-btn">Search</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

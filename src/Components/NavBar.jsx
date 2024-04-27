@@ -15,7 +15,7 @@ const NavBar = (props) => {
           <ul className="nav-items">
             <li className="lineAnimation">Home</li>
             <li className="lineAnimation">About</li>
-            <li className="lineAnimation">DashBoard</li>
+            <li className="lineAnimation"><Link to="/dashboard">DashBoard</Link></li>
           </ul>
         ) : (
           <ul className="flex items-center space-x-4">

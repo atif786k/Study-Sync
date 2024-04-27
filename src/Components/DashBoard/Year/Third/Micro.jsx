@@ -65,7 +65,7 @@ const Micro = () => {
   };
   return (
     <>
-      <div className="net-div animate__animated animate__fadeInUp">
+      <div className="net-div">
         <h1>Introduction to Computer Networks</h1>
         <div className="">
           <iframe
