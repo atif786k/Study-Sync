@@ -24,7 +24,7 @@ const Chatbot = () => {
         "useSessionStorage": true,
         "enableConversationDeletion": true,
         "theme": "prism",
-        "themeColor": "#2563eb"
+        "themeColor": "#00A300"
       });
     };
   }, []);

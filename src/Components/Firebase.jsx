@@ -28,7 +28,6 @@
 
 // export default firebase;
 
-
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
@@ -41,12 +40,11 @@ const firebaseConfig = {
   storageBucket: "smart-study-central.appspot.com",
   messagingSenderId: "576004645453",
   appId: "1:576004645453:web:015e533a615e9358d8f204",
-  measurementId: "G-JLR6W3D9SL"
+  measurementId: "G-JLR6W3D9SL",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
