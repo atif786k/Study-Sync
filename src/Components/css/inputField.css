@@ -5,8 +5,8 @@
 }
 
 .in {
-  border-color: #cec8c6;
-  background-color: #2d2d2d;
+  border-color: grey;
+  background-color: #111111;
   width: 100%;
   padding: 8px 8px 5px 2px;
   outline: none;
@@ -14,24 +14,24 @@
   font-weight: bold;
 }
 .lab {
-  color: #cec8c6;
+  color: grey;
   position: absolute;
   left: 0;
   top: 11px;
   transition: 0.5s;
   font-size: 14px;
   letter-spacing: 0.07rem;
-  background-color: #2d2d2d;
+  background-color: #111111;
 }
 .inputFeild input:valid ~ .lab,
 .inputFeild input:focus ~ .lab {
   transform: translateY(-20px);
   font-size: 12px;
-  color: #cec8c6;
+  color: #ffffff;
   letter-spacing: 0.1rem;
 }
 .inputFeild .in:valid,
 .inputFeild .in:focus {
-  border-bottom: 2px solid #cec8c6;
+  border-bottom: 2px solid #ffffff;
 }
 

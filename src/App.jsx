@@ -21,6 +21,7 @@ import MobileComp from "./Components/subjects/MobileComp";
 import DataStruct from "./Components/subjects/DataStruct";
 import DataMin from "./Components/subjects/DataMin";
 import Programming from "./Components/subjects/Programming";
+import Form from "./Components/Form";
 
 // import Contact from "./utils/Contact";
 // import Testimonials from "./utils/Testimonials";
@@ -114,9 +115,11 @@ function App() {
               <Route exact path="/dashboard/cse/program" element={<Programming/>}></Route>
               <Route exact path="/dashboard/cse/crypto" element={<MobileComp/>}></Route>
             </Route>
+            <Route exact path="/dashboard/form" element={<Form/>}></Route>
           </Route>
         </Routes>
       </Router>
+      {/* <Form/> */}
     </>
   );
 }

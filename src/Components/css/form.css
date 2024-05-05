@@ -1,0 +1,41 @@
+.form-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #111111;
+  color: grey;
+}
+.form-section h2{
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: grey;
+}
+.form-container {
+  padding: 44px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px grey;
+}
+.upload-file {
+  width: 210px;
+  padding: 8px 0px;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid grey;
+  border-radius: 50px;
+}
+.submit-form-btn {
+  width: 210px;
+  padding: 8px 0px;
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 50px;
+  background-color: green;
+  color: #ffffff;
+}

@@ -68,6 +68,12 @@ export default function SideBar() {
             className="hover-effect"
             icon={<AccountCircleIcon className="side-bar-icons" />}
           >
+            <Link to="/dashboard/form">Upload</Link>
+          </MenuItem>
+          <MenuItem
+            className="hover-effect"
+            icon={<AccountCircleIcon className="side-bar-icons" />}
+          >
             Account
           </MenuItem>
           <MenuItem
