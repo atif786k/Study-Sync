@@ -28,7 +28,7 @@ const DashBoard = () => {
             <li>Data Mining</li>
           </ul>
         </section>
-        <div className="dash-main-div">
+        <div className="dash-main-div border-2 border-red-400">
           <div className="search-main-div">
             <h1>Which topic you want to study today ?</h1>
             <div className="search-field-div">
@@ -40,6 +40,7 @@ const DashBoard = () => {
               <button className="search-btn">Search</button>
             </div>
           </div>
+          
         </div>
       </div>
       <Bot/>
